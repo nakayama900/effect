@@ -987,20 +987,55 @@ export function pipe(
       return a
     case 2:
       return ab!(a)
-    case 3:
-      return bc!(ab!(a))
-    case 4:
-      return cd!(bc!(ab!(a)))
-    case 5:
-      return de!(cd!(bc!(ab!(a))))
-    case 6:
-      return ef!(de!(cd!(bc!(ab!(a)))))
-    case 7:
-      return fg!(ef!(de!(cd!(bc!(ab!(a))))))
-    case 8:
-      return gh!(fg!(ef!(de!(cd!(bc!(ab!(a)))))))
-    case 9:
-      return hi!(gh!(fg!(ef!(de!(cd!(bc!(ab!(a))))))))
+    case 3: {
+      const b = ab!(a)
+      return bc!(b)
+    }
+    case 4: {
+      const b = ab!(a)
+      const c = bc!(b)
+      return cd!(c)
+    }
+    case 5: {
+      const b = ab!(a)
+      const c = bc!(b)
+      const d = cd!(c)
+      return de!(d)
+    }
+    case 6: {
+      const b = ab!(a)
+      const c = bc!(b)
+      const d = cd!(c)
+      const e = de!(d)
+      return ef!(e)
+    }
+    case 7: {
+      const b = ab!(a)
+      const c = bc!(b)
+      const d = cd!(c)
+      const e = de!(d)
+      const f = ef!(e)
+      return fg!(f)
+    }
+    case 8: {
+      const b = ab!(a)
+      const c = bc!(b)
+      const d = cd!(c)
+      const e = de!(d)
+      const f = ef!(e)
+      const g = fg!(f)
+      return gh!(g)
+    }
+    case 9: {
+      const b = ab!(a)
+      const c = bc!(b)
+      const d = cd!(c)
+      const e = de!(d)
+      const f = ef!(e)
+      const g = fg!(f)
+      const h = gh!(g)
+      return hi!(h)
+    }
     default: {
       let ret = arguments[0]
       for (let i = 1; i < arguments.length; i++) {
@@ -1166,31 +1201,59 @@ export function flow(
       }
     case 3:
       return function(this: unknown) {
-        return cd!(bc!(ab.apply(this, arguments)))
+        const b = ab.apply(this, arguments)
+        return cd!(bc!(b))
       }
     case 4:
       return function(this: unknown) {
-        return de!(cd!(bc!(ab.apply(this, arguments))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        return de!(cd!(c))
       }
     case 5:
       return function(this: unknown) {
-        return ef!(de!(cd!(bc!(ab.apply(this, arguments)))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        const d = cd!(c)
+        return ef!(de!(d))
       }
     case 6:
       return function(this: unknown) {
-        return fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments))))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        const d = cd!(c)
+        const e = de!(d)
+        return fg!(ef!(e))
       }
     case 7:
       return function(this: unknown) {
-        return gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments)))))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        const d = cd!(c)
+        const e = de!(d)
+        const f = ef!(e)
+        return gh!(fg!(f))
       }
     case 8:
       return function(this: unknown) {
-        return hi!(gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments))))))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        const d = cd!(c)
+        const e = de!(d)
+        const f = ef!(e)
+        const g = fg!(f)
+        return hi!(gh!(g))
       }
     case 9:
       return function(this: unknown) {
-        return ij!(hi!(gh!(fg!(ef!(de!(cd!(bc!(ab.apply(this, arguments)))))))))
+        const b = ab.apply(this, arguments)
+        const c = bc!(b)
+        const d = cd!(c)
+        const e = de!(d)
+        const f = ef!(e)
+        const g = fg!(f)
+        const h = gh!(g)
+        return ij!(hi!(h))
       }
   }
   return

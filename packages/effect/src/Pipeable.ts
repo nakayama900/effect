@@ -497,24 +497,123 @@ export const pipeArguments = <A>(self: A, args: IArguments): unknown => {
   switch (args.length) {
     case 0:
       return self
-    case 1:
-      return args[0](self)
-    case 2:
-      return args[1](args[0](self))
-    case 3:
-      return args[2](args[1](args[0](self)))
-    case 4:
-      return args[3](args[2](args[1](args[0](self))))
-    case 5:
-      return args[4](args[3](args[2](args[1](args[0](self)))))
-    case 6:
-      return args[5](args[4](args[3](args[2](args[1](args[0](self))))))
-    case 7:
-      return args[6](args[5](args[4](args[3](args[2](args[1](args[0](self)))))))
-    case 8:
-      return args[7](args[6](args[5](args[4](args[3](args[2](args[1](args[0](self))))))))
-    case 9:
-      return args[8](args[7](args[6](args[5](args[4](args[3](args[2](args[1](args[0](self)))))))))
+    case 1: {
+      const f1 = args[0]
+      const _1 = f1(self)
+      return _1
+    }
+    case 2: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      return _2
+    }
+    case 3: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      return _3
+    }
+    case 4: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      return _4
+    }
+    case 5: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const f5 = args[4]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      const _5 = f5(_4)
+      return _5
+    }
+    case 6: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const f5 = args[4]
+      const f6 = args[5]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      const _5 = f5(_4)
+      const _6 = f6(_5)
+      return _6
+    }
+    case 7: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const f5 = args[4]
+      const f6 = args[5]
+      const f7 = args[6]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      const _5 = f5(_4)
+      const _6 = f6(_5)
+      const _7 = f7(_6)
+      return _7
+    }
+    case 8: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const f5 = args[4]
+      const f6 = args[5]
+      const f7 = args[6]
+      const f8 = args[7]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      const _5 = f5(_4)
+      const _6 = f6(_5)
+      const _7 = f7(_6)
+      const _8 = f8(_7)
+      return _8
+    }
+    case 9: {
+      const f1 = args[0]
+      const f2 = args[1]
+      const f3 = args[2]
+      const f4 = args[3]
+      const f5 = args[4]
+      const f6 = args[5]
+      const f7 = args[6]
+      const f8 = args[7]
+      const f9 = args[8]
+      const _1 = f1(self)
+      const _2 = f2(_1)
+      const _3 = f3(_2)
+      const _4 = f4(_3)
+      const _5 = f5(_4)
+      const _6 = f6(_5)
+      const _7 = f7(_6)
+      const _8 = f8(_7)
+      const _9 = f9(_8)
+      return _9
+    }
     default: {
       let ret = self
       for (let i = 0, len = args.length; i < len; i++) {
